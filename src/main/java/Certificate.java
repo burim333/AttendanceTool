@@ -41,7 +41,7 @@ public class Certificate {
     static String absence = "4";
     static String pathPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\Kursintyg.pdf";
     static String pathNewPDF = " ";
-    static String fontPath;
+    //static String fontPath;
     static int index = 0;
     static PdfContentByte cb;
     static PdfContentByte cb2;
@@ -52,8 +52,8 @@ public class Certificate {
     static PdfReader reader;
 
     public Certificate() {
-        fontPath = getClass().getResource("/documents/Ralewaylight.ttf").toString();
-
+        //fontPath = getClass().getResource("/documents/Ralewaylight.ttf").toString();
+        //System.out.println(fontPath);
         //eAddress = GUI.prefs.get("mailString", " ");
         samordnare = "x y";
         //phone = GUI.prefs.get("telString", " ");
@@ -75,7 +75,7 @@ public class Certificate {
             writer = PdfWriter.getInstance(document, new FileOutputStream(pathNewPDF));
             document.open();
             cb = writer.getDirectContent();
-            f_cn = BaseFont.createFont(fontPath, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            //f_cn = BaseFont.createFont(fontPath, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             // Load existing PDF
             templateInputStream = new FileInputStream(pathPDF);
             reader = new PdfReader(templateInputStream);

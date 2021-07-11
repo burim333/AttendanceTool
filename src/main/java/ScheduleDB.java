@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class ScheduleDB {
 
-    String dbPath = "jdbc:sqlite:" + System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\schema.sqlite";
+    String dbPath;
     static Connection con;
     ResultSet resultSet = null;
     static Statement statement = null;
@@ -23,7 +23,7 @@ public class ScheduleDB {
     public ScheduleDB() throws ClassNotFoundException {
         try {
             Class.forName("org.sqlite.JDBC");
-            dbPath = "jdbc:sqlite:" + System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\schema.sqlite";
+            dbPath = "jdbc:sqlite:" + System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/schema.sqlite";
             con = DriverManager.getConnection(dbPath);
 
             String sql = "CREATE TABLE IF NOT EXISTS schedule (\n"

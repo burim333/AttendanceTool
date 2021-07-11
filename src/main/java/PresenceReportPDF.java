@@ -38,7 +38,7 @@ public class PresenceReportPDF {
     //static String absence = "4";
     static String pathPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\monthreport.pdf";
     static String pathNewPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\filled_monthreport.pdf";
-    static String fontPath;
+    //static String fontPath;
     static int index = 0;
     static PdfContentByte cb;
     static PdfContentByte cb2;
@@ -50,7 +50,7 @@ public class PresenceReportPDF {
     static int[] x_pos;
 
     public PresenceReportPDF() {
-        fontPath = getClass().getResource("/documents/Caviardreams.ttf").toString();
+        //fontPath = getClass().getResource("/documents/Caviardreams.ttf").toString();
 
         eAddress = GUI.prefs.get("mailString", " ");
         phone = GUI.prefs.get("telString", " ");
@@ -113,7 +113,7 @@ public class PresenceReportPDF {
             writer = PdfWriter.getInstance(document, new FileOutputStream(pathNewPDF));
             document.open();
             cb = writer.getDirectContent();
-            f_cn = BaseFont.createFont(fontPath, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            //f_cn = BaseFont.createFont(fontPath, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             // Load existing PDF
             templateInputStream = new FileInputStream(pathPDF);
             reader = new PdfReader(templateInputStream);

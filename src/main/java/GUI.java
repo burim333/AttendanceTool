@@ -58,7 +58,7 @@ public final class GUI extends JPanel {
 
     static public ImageIcon imageIcon;
     final public String img = "/Images/workfast4.png";
-    ImageIcon iconImg = new ImageIcon(getClass().getResource("/Images/icon2.png"));
+    //ImageIcon iconImg = new ImageIcon(getClass().getResource("/Images/icon2.png"));
     static public ExcelHandler excel;
     Calendar now = GregorianCalendar.getInstance();
     static String groupNow = "";
@@ -214,7 +214,7 @@ public final class GUI extends JPanel {
         aboutParticipant.setTransferHandler(null);// låt inte användaren klistra in något 
         previousLF = UIManager.getLookAndFeel();
         excel = new ExcelHandler();
-        imageIcon = (new ImageIcon(getClass().getResource("/Images/icon2.png")));
+        //imageIcon = (new ImageIcon(getClass().getResource("/Images/icon2.png")));
         this.hashMap = new HashMap<>();
         table.setFillsViewportHeight(true);
         //table.getTableHeader().setFont(new Font(font, Font.BOLD, 16));
@@ -902,7 +902,7 @@ public final class GUI extends JPanel {
                     copyFile.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                     copyFile.setResizable(false);
                     copyFile.setTitle("Importera excelfil");
-                    copyFile.setIconImage(iconImg.getImage());
+                    //copyFile.setIconImage(iconImg.getImage());
                     copyFile.setLocation(width / 3, height / 2);
                     copyFile.setVisible(true);
                     UIManager.setLookAndFeel(previousLF);
@@ -1302,7 +1302,7 @@ public final class GUI extends JPanel {
         text11.setForeground(new Color(0xEDFFE1));
         JLabel label = new JLabel();
 
-        label.setIcon(new ImageIcon(getClass().getResource(img)));// bild
+        //label.setIcon(new ImageIcon(getClass().getResource(img)));// bild
 
         imagePanel.add(label);
         imagePanel.add(text1);
@@ -2420,7 +2420,7 @@ public final class GUI extends JPanel {
 
         //frame.pack();
         frame.setLocationRelativeTo(null);
-        frame.setIconImage((imageIcon.getImage()));
+//        frame.setIconImage((imageIcon.getImage()));
         frame.setVisible(true);
 
         if (groupNow.equals("Excelfil saknas")) {
