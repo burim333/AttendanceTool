@@ -41,7 +41,7 @@ public class ImportExcelFile extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+                    //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
                     JFileChooser jFileChooser = new JFileChooser(path);
                     jFileChooser.setDialogTitle("Importera fil");
                     FileNameExtensionFilter xmlfilter = new FileNameExtensionFilter("xlsx, xls, xlsm", "xlsx", "xls", "xlsm");//bara xlsx och xls filer
@@ -51,15 +51,16 @@ public class ImportExcelFile extends JFrame {
                         seletedFileName = jFileChooser.getSelectedFile().getName();
                         selectedFilePath = jFileChooser.getSelectedFile().getAbsolutePath();
                         sourceFileTextField.setText(seletedFileName);
-                        UIManager.setLookAndFeel(previousLF);
-                        UIManager.getLookAndFeelDefaults().put("TableHeader.font", new Font("Arial", Font.PLAIN, 14));// ändra text i kategorin
+                        //UIManager.setLookAndFeel(previousLF);
+                       // UIManager.getLookAndFeelDefaults().put("TableHeader.font", new Font("Arial", Font.PLAIN, 14));// ändra text i kategorin
                     } else {
                         UIManager.setLookAndFeel(previousLF);
                         UIManager.getLookAndFeelDefaults().put("TableHeader.font", new Font("Arial", Font.PLAIN, 14));// ändra text i kategorin
                     }
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                } catch (UnsupportedLookAndFeelException ex) {
                     JOptionPane.showMessageDialog(null, "Ett fel inträffade (fel: välj fil)\n"
                             + "Det gick inte att kopiera filen!", "Meddelande", JOptionPane.DEFAULT_OPTION);
+                    System.out.println(ex);
                 }
             }
         });

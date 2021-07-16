@@ -22,7 +22,7 @@ public class DatePicker {
     //create object of JButton
     JButton[] button = new JButton[49];
 
-    ImageIcon img = new ImageIcon(getClass().getResource("/Images/icon2.png"));
+    //ImageIcon img = new ImageIcon(getClass().getResource("/Images/icon2.png"));
 
     public DatePicker(JFrame parent) {
         //create object
@@ -99,7 +99,7 @@ public class DatePicker {
         //set border alignment
         d.add(p1, BorderLayout.CENTER);
         d.add(p2, BorderLayout.SOUTH);
-        d.setIconImage(img.getImage());
+        //d.setIconImage(img.getImage());
         d.pack();
         //set location
         d.setLocationRelativeTo(parent);
