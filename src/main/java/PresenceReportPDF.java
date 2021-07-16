@@ -36,8 +36,8 @@ public class PresenceReportPDF {
     static String phone = GUI.prefs.get("telString", " ");
     static String organizer = GUI.prefs.get("anordString", " ");
     //static String absence = "4";
-    static String pathPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\monthreport.pdf";
-    static String pathNewPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\filled_monthreport.pdf";
+    static String pathPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/monthreport.pdf";
+    static String pathNewPDF = " ";
     //static String fontPath;
     static int index = 0;
     static PdfContentByte cb;
@@ -103,11 +103,11 @@ public class PresenceReportPDF {
         fileName = fileName.replace("/", "").replace("\\", "").replace("!", "").replace("?", "").replace("*", "").replace(":", "").replace("?", "").replace("<", "").replace(">", "").replace("|", "").trim();
 
         try {
-            if (!Files.isDirectory(Paths.get(System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Månadsrapporter\\" + group))) {
-                File dir = new File(System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Månadsrapporter\\" + group);
+            if (!Files.isDirectory(Paths.get(System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Månadsrapporter/" + group))) {
+                File dir = new File(System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Månadsrapporter/" + group);
                 dir.mkdir();
             }
-            pathNewPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Månadsrapporter\\" + group + "\\" + fileName + ".pdf";
+            pathNewPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Manadsrapporter/" + group + "/" + fileName + ".pdf";
 
             document = new Document(PageSize.A4.rotate());//PageSize.A4 för portrait
             writer = PdfWriter.getInstance(document, new FileOutputStream(pathNewPDF));

@@ -28,7 +28,7 @@ public class PeriodicReportPDF {
     static String name = "*";
     static String publicStartDate = "ÅÅÅÅ-MM-DD";
     static String absence = "4";
-    static String pathPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\absencePDF.pdf";
+    static String pathPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/absencePDF.pdf";
     static String pathNewPDF = " ";
     static String fontPath;
     static int index = 0;
@@ -45,7 +45,7 @@ public class PeriodicReportPDF {
     boolean create_pdf;
 
     public PeriodicReportPDF() {
-        fontPath = getClass().getResource("/documents/Caviardreams.ttf").toString();
+        //fontPath = getClass().getResource("/documents/Caviardreams.ttf").toString();
 
         x_pos = new int[32];
         y_pos = new int[61];
@@ -151,10 +151,10 @@ public class PeriodicReportPDF {
 
         try {
             fileName = fileName.replace("/", "").replace("\\", "").replace("!", "").replace("?", "").replace("*", "").replace(":", "").replace("?", "").replace("<", "").replace(">", "").replace("|", "").trim();
-            fontPath = getClass().getResource("/documents/Caviardreams.ttf").toString();
+            //fontPath = getClass().getResource("/documents/Caviardreams.ttf").toString();
             f_cn = BaseFont.createFont(fontPath, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
 
-            pathNewPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Periodiska rapporter\\Periodisk rapport_" + fileName + ".pdf";
+            pathNewPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Periodiska rapporter/Periodisk rapport_" + fileName + ".pdf";
 
             document = new Document(PageSize.A4);
             writer = PdfWriter.getInstance(document, new FileOutputStream(pathNewPDF));

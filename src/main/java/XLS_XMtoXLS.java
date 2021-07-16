@@ -32,7 +32,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class XLS_XMtoXLS {
 
-    private final String outFn = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\deltagare.xls";
+    private final String outFn = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls";
     private final File inpFn;
     InputStream in;
     boolean cancel = false;

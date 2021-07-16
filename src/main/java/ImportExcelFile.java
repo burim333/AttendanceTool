@@ -71,7 +71,7 @@ public class ImportExcelFile extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (FilenameUtils.getExtension(selectedFilePath).equals("xlsx")
                         || FilenameUtils.getExtension(selectedFilePath).equals("xlsm")) {
-                    File destinationFile = new File((System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\deltagare.xls"));
+                    File destinationFile = new File((System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls"));
                     try {
                         File sourceFile = new File(selectedFilePath);
                         String absoluteSourcePath = sourceFile.getAbsolutePath();
@@ -132,19 +132,19 @@ public class ImportExcelFile extends JFrame {
                     }
                 } else if (FilenameUtils.getExtension(selectedFilePath).equals("xls")) {
                     File sourceFile = new File(selectedFilePath);
-                    File destinationFolder = new File((System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument"));
+                    File destinationFolder = new File((System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument"));
                     String absoluteSourcePath = sourceFile.getAbsolutePath();
                     String sourceFilePath = absoluteSourcePath.substring(0, absoluteSourcePath.lastIndexOf(File.separator));
                     try {
-                        File f = new File((System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\deltagare.xls"));
-                        File fToRename = new File((System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\" + seletedFileName));
+                        File f = new File((System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls"));
+                        File fToRename = new File((System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/" + seletedFileName));
                         if (!f.exists() && !f.isDirectory()) {
                             //System.out.println("dokument finns INTE");
                             if (!sourceFilePath.equals(destinationFolder.getAbsolutePath())) {
                                 FileUtils.copyFileToDirectory(sourceFile, destinationFolder, false);
                             }
                             if (!fToRename.getName().equals("deltagare.xls")) {
-                                fToRename.renameTo(new File((System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\deltagare.xls")));
+                                fToRename.renameTo(new File((System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls")));
                             }
                             Desktop dt = Desktop.getDesktop();
                             pref.put("DEFAULT_PATH", sourceFilePath);
@@ -161,11 +161,11 @@ public class ImportExcelFile extends JFrame {
                                 if (!sourceFilePath.equals(destinationFolder.getAbsolutePath())) {
                                     f.delete();
                                     FileUtils.copyFileToDirectory(sourceFile, destinationFolder, false);
-                                    fToRename.renameTo(new File((System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\deltagare.xls")));
+                                    fToRename.renameTo(new File((System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls")));
                                 }
                                 if (!fToRename.getAbsolutePath().equals(f.getAbsolutePath()) && sourceFilePath.equals(destinationFolder.getAbsolutePath())) {
                                     f.delete();
-                                    fToRename.renameTo(new File((System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\deltagare.xls")));
+                                    fToRename.renameTo(new File((System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls")));
                                 }
                                 Desktop dt = Desktop.getDesktop();
                                 pref.put("DEFAULT_PATH", sourceFilePath);
@@ -198,7 +198,7 @@ public class ImportExcelFile extends JFrame {
                             + "Excel-arbetsbok (*.xlsx)\n"
                             + "Excel Macro-Enabled Workbook(*.xlsm)\n\n"
                             + "Försök sedan att importera filen igen.\n\n", "Meddelande", JOptionPane.DEFAULT_OPTION);
-                    File file = new File(System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\deltagare.xls");
+                    File file = new File(System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls");
                     if (file.exists()) {
                         file.delete();// ta bort deltagare.xls då den inte kan öppnas av programmet.
                     }

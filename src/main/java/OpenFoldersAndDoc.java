@@ -16,9 +16,9 @@ public class OpenFoldersAndDoc {
     static String deviationPath = "S:\\330 Region Kristianstad-Blekinge\\Hässleholm\\Admin\\GM\\Avvikelserapporter";
     static String dagJournalPath = "S:\\330 Region Kristianstad-Blekinge\\Hässleholm\\Dagjournal.xlsx";
     static String help = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Hjälp";
-    static String monthReportPath = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Månadsrapporter";
+    static String monthReportPath = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Manadsrapporter";
     static String openPeriodRap = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Periodiska rapporter";
-    static String openMonthRap = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Månadsrapporter";
+    static String openMonthRap = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Manadsrapporter";
     static String openAbsenceLists = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dagens grupplistor";
 
     public OpenFoldersAndDoc() {

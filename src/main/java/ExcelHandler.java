@@ -44,7 +44,7 @@ public class ExcelHandler {
     int row;
     int index;
     Connection con;
-    static String filePath = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\deltagare.xls";
+    static String filePath = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls";
     int[] rows = new int[50];
     Cell cell = null;
     HSSFSheet worksheet;
@@ -57,6 +57,10 @@ public class ExcelHandler {
     PeriodicReportPDF abPdf;
     AttendanceWordList tt;
     OpenFoldersAndDoc openFolder = new OpenFoldersAndDoc();
+
+    public ExcelHandler() {
+        System.out.println(filePath);
+    }
 
     public int getRowIndexByName(String name) {
         int rowIndex = 0;

@@ -50,7 +50,7 @@ public class AttendanceWordList {
     int counter = 0;
     int rader = 0;
     String dataBaseValue;
-    static String documentFolder = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument";
+    static String documentFolder = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument";
     ExcelHandler excel = new ExcelHandler();
 
     public AttendanceWordList(String group, String tid, boolean fileExists) {
@@ -65,8 +65,8 @@ public class AttendanceWordList {
 
             //Om filen inte finns, skapa den först.
             if (!fileExists) {
-                existingFile = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\" + tid + ".docx";
-                fileToBeCreated = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Grupplistor\\" + group + ".docx";
+                existingFile = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Grupplistor/" + tid + ".docx";
+                fileToBeCreated = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Grupplistor/" + group + ".docx";
                 inputStream = new FileInputStream(existingFile);
                 try {
                     document = new XWPFDocument(inputStream);
@@ -101,8 +101,8 @@ public class AttendanceWordList {
                 }
             }
 
-            existingFile = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Grupplistor\\" + group + ".docx";
-            fileToBeCreated = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dagens grupplistor\\" + group + ".docx";
+            existingFile = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Grupplistor/" + group + ".docx";
+            fileToBeCreated = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Grupplistor/" + group + ".docx";
             inputStream = new FileInputStream(existingFile);
             try {
                 document = new XWPFDocument(inputStream);

@@ -1533,7 +1533,7 @@ public final class GUI extends JPanel {
         scheduleFrame.getContentPane().add(BorderLayout.SOUTH, btnPanel);
         scheduleFrame.getContentPane().add(BorderLayout.CENTER, panel);
         scheduleFrame.setLocationRelativeTo(null);
-        scheduleFrame.setIconImage((imageIcon.getImage()));
+//        scheduleFrame.setIconImage((imageIcon.getImage()));
         scheduleFrame.setVisible(true);
 
         if (!db.tableExist(model.getCheckedCaseNumber()[0])) {
@@ -1865,7 +1865,7 @@ public final class GUI extends JPanel {
         infoFrame.getContentPane().add(p);
         infoFrame.getContentPane().add(BorderLayout.SOUTH, btnPanel);
         infoFrame.setLocationRelativeTo(null);
-        infoFrame.setIconImage((imageIcon.getImage()));
+//        infoFrame.setIconImage((imageIcon.getImage()));
 
         nameF.setText(info[0]);
         startF.setText(info[1]);
