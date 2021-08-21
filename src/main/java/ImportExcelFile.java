@@ -20,15 +20,15 @@ import java.util.prefs.Preferences;
  */
 public class ImportExcelFile extends JFrame {
 
-    JTextField sourceFileTextField;
-    String selectedFilePath = "";
-    String seletedFileName = "";
-    LookAndFeel previousLF;
-    Preferences pref = Preferences.userRoot();
-    String path = pref.get("DEFAULT_PATH", "");
-    JButton copyButton;
-    JButton sourceFileChoserButton;
-    JLabel sourceFileJLabel;
+    private JTextField sourceFileTextField;
+    private String selectedFilePath = "";
+    private String seletedFileName = "";
+    private LookAndFeel previousLF;
+    private Preferences pref = Preferences.userRoot();
+    private String path = pref.get("DEFAULT_PATH", "");
+    private JButton copyButton;
+    private JButton sourceFileChoserButton;
+    private JLabel sourceFileJLabel;
     
     public ImportExcelFile() throws HeadlessException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         previousLF = UIManager.getLookAndFeel();

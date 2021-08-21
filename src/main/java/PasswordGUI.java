@@ -16,13 +16,13 @@ public class PasswordGUI extends JPanel implements ActionListener {
 
     private static final String OK = "ok";
     private static final String HELP = "hjälp";
-    static JFrame frame;
-    static ImageIcon img;
+    private static JFrame frame;
+    private static ImageIcon img;
 
-    static SimpleDateFormat df;
-    static DateTimeFormatter formatter;
-    static Calendar cal;
-    static String newLimit = "2019-12-20";
+    private static SimpleDateFormat df;
+    private static DateTimeFormatter formatter;
+    private static Calendar cal;
+    private static String newLimit = "2019-12-20";
 
     private final JFrame controllingFrame; //needed for dialogs
     private final JPasswordField passwordField;

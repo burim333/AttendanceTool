@@ -33,33 +33,33 @@ import org.apache.poi.ss.util.CellRangeAddress;
  */
 public class ExcelHandler {
 
-    ResultSet resultSet = null;
-    ResultSet resultSet2 = null;
-    Statement statement = null;
-    Statement statement2 = null;
-    FileInputStream fsIP;
-    HSSFWorkbook wb;
-    String[] tempDeltagare;
-    String grupp = "";
-    int row;
-    int index;
-    Connection con;
-    static String filePath = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls";
-    int[] rows = new int[50];
-    Cell cell = null;
-    HSSFSheet worksheet;
-    int dayNumber;
-    Calendar now = GregorianCalendar.getInstance();
-    PresenceReportPDF presRepPDF = new PresenceReportPDF();
-    HashMap<String, String> hmap;
-    boolean wordOpen = false;
+    private ResultSet resultSet = null;
+    private ResultSet resultSet2 = null;
+    private Statement statement = null;
+    private Statement statement2 = null;
+    private FileInputStream fsIP;
+    private HSSFWorkbook wb;
+    private String[] tempDeltagare;
+    private String grupp = "";
+    private int row;
+    private int index;
+    private Connection con;
+    private static String filePath = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls";
+    private int[] rows = new int[50];
+    private Cell cell = null;
+    private HSSFSheet worksheet;
+    private int dayNumber;
+    private Calendar now = GregorianCalendar.getInstance();
+    private PresenceReportPDF presRepPDF = new PresenceReportPDF();
+    private HashMap<String, String> hmap;
+    private boolean wordOpen = false;
     public static String[] groups;
-    PeriodicReportPDF abPdf;
-    AttendanceWordList tt;
-    OpenFoldersAndDoc openFolder = new OpenFoldersAndDoc();
+    private PeriodicReportPDF abPdf;
+    private AttendanceWordList tt;
+    private OpenFoldersAndDoc openFolder = new OpenFoldersAndDoc();
 
     public ExcelHandler() {
-        System.out.println(filePath);
+        System.out.println("ExcelHandler: " + filePath);
     }
 
     public int getRowIndexByName(String name) {

@@ -10,17 +10,17 @@ import javax.swing.*;
 public class DatePicker {
 
     //define variables
-    int month = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
-    int year = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
-    java.util.Calendar cal;
+    private int month = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
+    private int year = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
+    private java.util.Calendar cal;
     //create object of JLabel with alignment
-    JLabel l = new JLabel("", JLabel.CENTER);
+    private JLabel l = new JLabel("", JLabel.CENTER);
     //define variable
-    String day = "";
+    private String day = "";
     //declaration
-    JDialog d;
+    private JDialog d;
     //create object of JButton
-    JButton[] button = new JButton[49];
+    private JButton[] button = new JButton[49];
 
     //ImageIcon img = new ImageIcon(getClass().getResource("/Images/icon2.png"));
 

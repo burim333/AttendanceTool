@@ -44,7 +44,7 @@ import javax.swing.text.DocumentFilter;
 @SuppressWarnings("serial")
 public final class GUI extends JPanel {
 
-    public static final String[] COLUMNS = {"Närvaro", "Deltagare", "Ärendenummer", "Avvikelse", "Anteckningar", "Dagar kvar"};
+    private static final String[] COLUMNS = {"Närvaro", "Deltagare", "Ärendenummer", "Avvikelse", "Anteckningar", "Dagar kvar"};
     private CheckBoxDefaultTableModel model = new CheckBoxDefaultTableModel(COLUMNS, 0);
     private final JTable table = new JTable(model);
     static Preferences prefs = Preferences.userRoot();
@@ -54,37 +54,37 @@ public final class GUI extends JPanel {
     //static String mail2 = prefs.get("mailString", "");
     //static String aktivitet = prefs.get("aktivitetString", "");
     //static String samord = prefs.get("samordString", "");
-    static String chef = "x y";
+    private static String chef = "x y";
 
-    static public ImageIcon imageIcon;
-    final public String img = "/Images/workfast4.png";
+    static private ImageIcon imageIcon;
+    final private String img = "/Images/workfast4.png";
     //ImageIcon iconImg = new ImageIcon(getClass().getResource("/Images/icon2.png"));
-    static public ExcelHandler excel;
+    static ExcelHandler excel;
     Calendar now = GregorianCalendar.getInstance();
-    static String groupNow = "";
-    String[] absence;
-    String[] presence;
-    String[] grupper;
+    private static String groupNow = "";
+    private String[] absence;
+    private String[] presence;
+    private String[] grupper;
     String actualValue = "";
-    JComboBox måndag;
-    JComboBox tisdag;
-    JComboBox onsdag;
-    JComboBox torsdag;
-    JComboBox fredag;
-    String[] grupperInnan;
+    private JComboBox måndag;
+    private JComboBox tisdag;
+    private JComboBox onsdag;
+    private JComboBox torsdag;
+    private JComboBox fredag;
+    private String[] grupperInnan;
 
-    String[] day = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+    private String[] day = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
         "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"};
 
-    String[] GUIabsenceOpt = {" ", "S", "A", "V", "Ö", "P", "AF", "0,15", "0,30", "0,45", "1", "1,15", "1,30", "1,45", "2", "2,15", "2,30", "2,45",
+    private String[] GUIabsenceOpt = {" ", "S", "A", "V", "Ö", "P", "AF", "0,15", "0,30", "0,45", "1", "1,15", "1,30", "1,45", "2", "2,15", "2,30", "2,45",
         "3", "3,15", "3,30", "3,45", "4", "4,15", "4,30", "4,45", "5", "5,15", "5,30", "5,45", "6", "6,15", "6,30", "6,45",
         "7", "7,15", "7,30", "7,45", "8"};
 
-    String[] changeAbsenceOpt = {"Återställ", "x", "h", "d", "S", "A", "V", "Ö", "P", "AF", "SFI", "SO", "0,15", "0,30", "0,45", "1", "1,15", "1,30",
+    private String[] changeAbsenceOpt = {"Återställ", "x", "h", "d", "S", "A", "V", "Ö", "P", "AF", "SFI", "SO", "0,15", "0,30", "0,45", "1", "1,15", "1,30",
         "1,45", "2", "2,15", "2,30", "2,45", "3", "3,15", "3,30", "3,45", "4", "4,15", "4,30", "4,45", "5",
         "5,15", "5,30", "5,45", "6", "6,15", "6,30", "6,45", "7", "7,15", "7,30", "7,45", "8"};
 
-    String[] scheduleOpt = {"HELTID", "EM", "FM", "SFI-EM", "FM-SFI", "SFI", "SO-EM", "FM-SO",
+    private String[] scheduleOpt = {"HELTID", "EM", "FM", "SFI-EM", "FM-SFI", "SFI", "SO-EM", "FM-SO",
         "SO-SO", "SO", "FM-P", "P-EM", "P", "SO-P", "P-SO", "SFI-P", "P-SFI", "KOMV-EM_100%", "FM-KOMV_100%",
         "KOMV-EM_50%", "FM-KOMV_50%", "KOMV", "KOMV-KOMV_100%", "KOMV-KOMV_50%", "SO-SFI", "SFI-SO",
         "SO-LEDIG", "LEDIG-SO", "SFI-LEDIG", "LEDIG-SFI", "FM-LEDIG", "LEDIG-EM", "LEDIG",
@@ -92,7 +92,7 @@ public final class GUI extends JPanel {
         "STOM", "FM-STOM", "STOM-EM", "UF", "FM-UF", "UF-EM", "VAB-VAB", "VAB", "AKT-EM_100%", "FM-AKT_100%",
         "AKT-EM_50%", "FM-AKT_50%", "AKT", "AKT-AKT_100%", "AKT-AKT_50%"};
 
-    String[] ScheduleOptTipText = {"Heltid hos oss (100%)", "Bara på EM hos oss (50%)",
+    private String[] ScheduleOptTipText = {"Heltid hos oss (100%)", "Bara på EM hos oss (50%)",
         "Bara på FM hos oss (50%)", "SFI på FM, hos oss på EM (50%)", "Hos oss på FM, SFI på EM (50%)", "SFI (ej frånvaro)",
         "Samhälle på FM, hos oss på EM (100%)", "Hos oss på FM, samhälle på EM (100%)", "Samhälle hela dagen (100%)",
         "Samhälle (50%)", "Hos oss på FM, praktik på EM (50%)", "Praktik på FM, hos oss på EM (50%)", "Praktik (ej frånvaro)",

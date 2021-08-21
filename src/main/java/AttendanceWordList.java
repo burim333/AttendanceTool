@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import javax.swing.JOptionPane;
+
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
@@ -28,30 +29,29 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP;
 
 /**
- *
  * @author Burim Sadriu Copyright© 2020, All Rights Reserved
  */
 public class AttendanceWordList {
 
-    XWPFDocument document;
-    String existingFile;
-    String fileToBeCreated;
-    List<XWPFParagraph> paragraphs;
-    InputStream inputStream;
-    OpenFoldersAndDoc openDoc = new OpenFoldersAndDoc();
-    LocalDateTime now = LocalDateTime.now();
-    int year = now.getYear();
-    int month = now.getMonthValue();
-    int day = now.getDayOfMonth();
-    Map<String, List<String>> hashMap;
-    static ScheduleDB db;
-    Calendar cal;
-    String todaysDay;
-    int counter = 0;
-    int rader = 0;
-    String dataBaseValue;
-    static String documentFolder = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument";
-    ExcelHandler excel = new ExcelHandler();
+    private XWPFDocument document;
+    private String existingFile;
+    private String fileToBeCreated;
+    private List<XWPFParagraph> paragraphs;
+    private InputStream inputStream;
+    private OpenFoldersAndDoc openDoc = new OpenFoldersAndDoc();
+    private LocalDateTime now = LocalDateTime.now();
+    private int year = now.getYear();
+    private int month = now.getMonthValue();
+    private int day = now.getDayOfMonth();
+    private Map<String, List<String>> hashMap;
+    private static ScheduleDB db;
+    private Calendar cal;
+    private String todaysDay;
+    private int counter = 0;
+    private int rader = 0;
+    private String dataBaseValue;
+    private static String documentFolder = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument";
+    private ExcelHandler excel = new ExcelHandler();
 
     public AttendanceWordList(String group, String tid, boolean fileExists) {
         try {

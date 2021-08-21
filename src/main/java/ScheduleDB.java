@@ -14,11 +14,11 @@ import javax.swing.JOptionPane;
  */
 public class ScheduleDB {
 
-    String dbPath;
-    static Connection con;
-    ResultSet resultSet = null;
-    static Statement statement = null;
-    PreparedStatement sm;
+    private String dbPath;
+    private static Connection con;
+    private ResultSet resultSet = null;
+    private static Statement statement = null;
+    private PreparedStatement sm;
 
     public ScheduleDB() throws ClassNotFoundException {
         try {

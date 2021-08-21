@@ -24,33 +24,34 @@ import javax.swing.JOptionPane;
  */
 public class PresenceReportPDF {
 
-    static PdfImportedPage page;
-    static int year;
-    static int month;
-    static int day;
-    static String stringMonth = "fel";
-    static String stringYear = "fel";
-    static String activity = GUI.prefs.get("aktivitetString", " ");
-    static String name = "fel";
-    static String eAddress = GUI.prefs.get("mailString", " ");
-    static String phone = GUI.prefs.get("telString", " ");
-    static String organizer = GUI.prefs.get("anordString", " ");
+    private static PdfImportedPage page;
+    private static int year;
+    private static int month;
+    private static int day;
+    private static String stringMonth = "fel";
+    private static String stringYear = "fel";
+    private static String activity = GUI.prefs.get("aktivitetString", " ");
+    private static String name = "fel";
+    private static String eAddress = GUI.prefs.get("mailString", " ");
+    private static String phone = GUI.prefs.get("telString", " ");
+    private static String organizer = GUI.prefs.get("anordString", " ");
     //static String absence = "4";
-    static String pathPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/monthreport.pdf";
-    static String pathNewPDF = " ";
+    private static String pathPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/monthreport.pdf";
+    private static String pathNewPDF = " ";
     //static String fontPath;
-    static int index = 0;
-    static PdfContentByte cb;
-    static PdfContentByte cb2;
+    private static int index = 0;
+    private static PdfContentByte cb;
+    private static PdfContentByte cb2;
     static BaseFont f_cn;
     static Document document;
     static PdfWriter writer;
-    static InputStream templateInputStream;
+    private static InputStream templateInputStream;
     static PdfReader reader;
-    static int[] x_pos;
+    private static int[] x_pos;
 
     public PresenceReportPDF() {
         //fontPath = getClass().getResource("/documents/Caviardreams.ttf").toString();
+        System.out.println("PresencePDF: " + pathPDF);
 
         eAddress = GUI.prefs.get("mailString", " ");
         phone = GUI.prefs.get("telString", " ");
@@ -107,13 +108,13 @@ public class PresenceReportPDF {
                 File dir = new File(System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Månadsrapporter/" + group);
                 dir.mkdir();
             }
-            pathNewPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Manadsrapporter/" + group + "/" + fileName + ".pdf";
+            pathNewPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Månadsrapporter/" + group + "/" + fileName + ".pdf";
 
             document = new Document(PageSize.A4.rotate());//PageSize.A4 för portrait
             writer = PdfWriter.getInstance(document, new FileOutputStream(pathNewPDF));
             document.open();
             cb = writer.getDirectContent();
-            //f_cn = BaseFont.createFont(fontPath, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            f_cn = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             // Load existing PDF
             templateInputStream = new FileInputStream(pathPDF);
             reader = new PdfReader(templateInputStream);

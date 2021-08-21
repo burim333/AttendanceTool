@@ -8,18 +8,18 @@ import javax.swing.JOptionPane;
  */
 public class OpenFoldersAndDoc {
 
-    static String groupsPath = "S:\\330 Region Kristianstad-Blekinge\\Kristianstad Björkhem\\Grupplistor";// Björkhem
-    static String schedulePath = "S:\\330 Region Kristianstad-Blekinge\\Hässleholm\\Schema\\Veckoschema Hässleholm.xlsx";
-    static String modulePath = "S:\\AlphaCE Alla\\Aktuella uppdrag\\Grundläggande moduler\\Utbildningsmaterial";
-    static String modulePath2 = "S:\\330 Region Kristianstad-Blekinge\\Kristianstad\\GM Modul 2\\Modul 2 GM\\Modul 2 - förberedande undervisning i svenska språket";
-    static String modulePath3 = "S:\\330 Region Kristianstad-Blekinge\\Kristianstad\\GM Modul 2\\Eget material MODUL 2";
-    static String deviationPath = "S:\\330 Region Kristianstad-Blekinge\\Hässleholm\\Admin\\GM\\Avvikelserapporter";
-    static String dagJournalPath = "S:\\330 Region Kristianstad-Blekinge\\Hässleholm\\Dagjournal.xlsx";
-    static String help = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Hjälp";
-    static String monthReportPath = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Manadsrapporter";
-    static String openPeriodRap = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Periodiska rapporter";
-    static String openMonthRap = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Manadsrapporter";
-    static String openAbsenceLists = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dagens grupplistor";
+    private static String groupsPath = "S:\\330 Region Kristianstad-Blekinge\\Kristianstad Björkhem\\Grupplistor";// Björkhem
+    private static String schedulePath = "S:\\330 Region Kristianstad-Blekinge\\Hässleholm\\Schema\\Veckoschema Hässleholm.xlsx";
+    private static String modulePath = "S:\\AlphaCE Alla\\Aktuella uppdrag\\Grundläggande moduler\\Utbildningsmaterial";
+    private static String modulePath2 = "S:\\330 Region Kristianstad-Blekinge\\Kristianstad\\GM Modul 2\\Modul 2 GM\\Modul 2 - förberedande undervisning i svenska språket";
+    private static String modulePath3 = "S:\\330 Region Kristianstad-Blekinge\\Kristianstad\\GM Modul 2\\Eget material MODUL 2";
+    private static String deviationPath = "S:\\330 Region Kristianstad-Blekinge\\Hässleholm\\Admin\\GM\\Avvikelserapporter";
+    private static String dagJournalPath = "S:\\330 Region Kristianstad-Blekinge\\Hässleholm\\Dagjournal.xlsx";
+    private static String help = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Hjälp";
+    private static String monthReportPath = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Manadsrapporter";
+    private static String openPeriodRap = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Periodiska rapporter";
+    private static String openMonthRap = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Manadsrapporter";
+    private static String openAbsenceLists = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dagens grupplistor";
 
     public OpenFoldersAndDoc() {
 

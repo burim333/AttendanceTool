@@ -5,6 +5,7 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfImportedPage;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;
+
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,36 +21,35 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
- *
  * @author Burim Sadriu Copyright© 2020, All Rights Reserved
  */
 public class Certificate {
 
-    static PdfImportedPage page;
-    static int year;
-    static int month;
-    static int day;
-    static String firstWord = null;
-    static String stringMonth = "fel";
-    static String stringYear = "fel";
-    static String stringDay = "fel";
+    private static PdfImportedPage page;
+    private static int year;
+    private static int month;
+    private static int day;
+    private static String firstWord = null;
+    private static String stringMonth = "fel";
+    private static String stringYear = "fel";
+    private static String stringDay = "fel";
     //static String activity = GUI.prefs.get("aktivitetString", " ");
-    static String name = "fel";
-    static String samordnare;
+    private static String name = "fel";
+    private static String samordnare;
     //static String phone = GUI.prefs.get("telString", " ");
     //static String organizer = GUI.prefs.get("anordString", " ");
-    static String absence = "4";
-    static String pathPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\Kursintyg.pdf";
-    static String pathNewPDF = " ";
+    private static String absence = "4";
+    private static String pathPDF = System.getProperty("user.home") + "\\Desktop\\Attendance Tool\\Dokument\\Kursintyg.pdf";
+    private static String pathNewPDF = " ";
     //static String fontPath;
-    static int index = 0;
-    static PdfContentByte cb;
-    static PdfContentByte cb2;
-    static BaseFont f_cn;
-    static Document document;
-    static PdfWriter writer;
-    static InputStream templateInputStream;
-    static PdfReader reader;
+    private static int index = 0;
+    private static PdfContentByte cb;
+    private static PdfContentByte cb2;
+    private static BaseFont f_cn;
+    private static Document document;
+    private static PdfWriter writer;
+    private static InputStream templateInputStream;
+    private static PdfReader reader;
 
     public Certificate() {
         //fontPath = getClass().getResource("/documents/Ralewaylight.ttf").toString();

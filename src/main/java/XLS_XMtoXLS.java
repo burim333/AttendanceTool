@@ -34,10 +34,10 @@ public class XLS_XMtoXLS {
 
     private final String outFn = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/deltagare.xls";
     private final File inpFn;
-    InputStream in;
-    boolean cancel = false;
-    Workbook wbOut = null;
-    Workbook wbIn = null;
+    private InputStream in;
+    private boolean cancel = false;
+    private Workbook wbOut = null;
+    private Workbook wbIn = null;
 
     public XLS_XMtoXLS(File inpFn) {
         this.inpFn = inpFn;

@@ -7,19 +7,19 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
 /**
- *
  * @author Burim Sadriu Copyright© 2020, All Rights Reserved
  */
 //Den här classen kopierar excelfilen när man är klar med närvaro-inskrivningen för månaden.
 public final class CopyFiles {
 
-    FileInputStream instream = null;
-    FileOutputStream outstream = null;
-    ExcelHandler excel = new ExcelHandler();
+    private FileInputStream instream = null;
+    private FileOutputStream outstream = null;
+    private ExcelHandler excel = new ExcelHandler();
 
     public CopyFiles(String month) {
         checkForCopy(month);

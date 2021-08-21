@@ -21,32 +21,32 @@ import javax.swing.JOptionPane;
  */
 public class PeriodicReportPDF {
 
-    static PdfImportedPage page;
-    static int year;
-    static int month;
-    static int day;
-    static String name = "*";
-    static String publicStartDate = "ÅÅÅÅ-MM-DD";
-    static String absence = "4";
-    static String pathPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/absencePDF.pdf";
-    static String pathNewPDF = " ";
-    static String fontPath;
-    static int index = 0;
-    static PdfContentByte cb;
-    static PdfContentByte cb2;
-    static BaseFont f_cn;
-    static Document document;
-    static PdfWriter writer;
-    static InputStream templateInputStream;
+    private static PdfImportedPage page;
+    private static int year;
+    private static int month;
+    private static int day;
+    private static String name = "*";
+    private static String publicStartDate = "ÅÅÅÅ-MM-DD";
+    private static String absence = "4";
+    private static String pathPDF = System.getProperty("user.home") + "/Skrivbord/Attendance Tool/Dokument/absencePDF.pdf";
+    private static String pathNewPDF = " ";
+    private static String fontPath;
+    private static int index = 0;
+    private static PdfContentByte cb;
+    private static PdfContentByte cb2;
+    public static BaseFont f_cn;
+    public static Document document;
+    public static PdfWriter writer;
+    private static InputStream templateInputStream;
     static PdfReader reader;
-    String dag;
-    static int[] x_pos;
-    static int[] y_pos;
-    boolean create_pdf;
+    private String dag;
+    private static int[] x_pos;
+    private static int[] y_pos;
+    private boolean create_pdf;
 
     public PeriodicReportPDF() {
         //fontPath = getClass().getResource("/documents/Caviardreams.ttf").toString();
-
+        System.out.println("periodicReport: "+ pathPDF);
         x_pos = new int[32];
         y_pos = new int[61];
 

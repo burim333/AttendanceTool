@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
 //Den här classen har hand om intyg.
 public class TextFieldLimit extends JTextArea {
 
-    int limit;
+    private int limit;
 
     public TextFieldLimit() {
 
